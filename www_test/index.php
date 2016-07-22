@@ -18,10 +18,11 @@ include_once((WWW_PATH . "/../framework/framework.php"));
 
 $snowy = \Snowy\Core\Snowy::instance();
 $snowy->add("/")
-    ->add("@/user/#{user_id}", ["controller" => "user", "action" => "show"])
+    ->add("@/user/#{user_id}", ["controller" => "User", "action" => "Show"])
     ->setArgsTypes([
         "user_id" => "int"
-    ]);
+    ])
+    ->add("json", ["action" => "json_example"]);
 
 $snowy->captureRequest();
 ?>

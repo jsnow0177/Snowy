@@ -1,0 +1,10 @@
+#
+# ЧПУ-роутинг
+#
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+#Если запрошен не статический файл
+RewriteCond %{REQUEST_FILENAME} !\.[ico|js|css|jpg|gif|jpeg|png|7z|zip]$
+#RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L,QSA]
